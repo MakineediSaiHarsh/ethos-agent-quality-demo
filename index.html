@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#183e36">
+<meta name="description" content="A guided prototype of fair agent commission decisions. Explore four cases, change the evidence and see the next step.">
+<meta name="robots" content="noindex, nofollow">
+<title>Ethos Agent Quality — Guided Prototype</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<script defer src="app.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#case-panel">Skip to the walkthrough</a>
+<header class="site-header"><div class="header-inner">
+<a class="brand" href="#dana" aria-label="Ethos Agent Quality home"><span class="brand-mark" aria-hidden="true">E</span><span class="brand-name">ethos</span><span class="brand-product">Agent quality</span></a>
+<span class="prototype-label">Interactive case study</span>
+<button class="text-button" data-action="rules">Program rules <span aria-hidden="true">↗</span></button>
+</div></header>
+<main class="page-shell">
+<section class="intro" aria-labelledby="page-title">
+<p class="eyebrow">A PROPOSED AGENT QUALITY PROGRAM</p>
+<h1 id="page-title">Clear decisions. A way forward.</h1>
+<p class="intro-copy">See how an agent’s commission advance changes when customers stop paying—and how they can earn better terms.</p>
+</section>
+<div class="guide-note"><span class="guide-icon" aria-hidden="true">→</span><p><strong>Start with Dana.</strong> Follow three short steps, or choose another agent.</p><span class="demo-label">Illustrative data</span></div>
+<div class="workspace">
+<aside class="agent-sidebar" aria-labelledby="agent-list-title">
+<div class="sidebar-heading"><h2 id="agent-list-title">Explore the cases</h2><button class="text-button reset-button" data-action="reset" aria-label="Reset walkthrough">↺ Reset</button></div>
+<nav class="agent-nav" aria-label="Choose an agent">
+<button class="agent-card is-selected" data-agent="dana" aria-pressed="true"><span class="avatar avatar-dana" aria-hidden="true">D</span><span><strong>Dana</strong><small>A billing error</small></span><span class="agent-arrow" aria-hidden="true">↗</span></button>
+<button class="agent-card" data-agent="priya" aria-pressed="false"><span class="avatar avatar-priya" aria-hidden="true">P</span><span><strong>Priya</strong><small>An early warning</small></span><span class="agent-arrow" aria-hidden="true">↗</span></button>
+<button class="agent-card" data-agent="marcus" aria-pressed="false"><span class="avatar avatar-marcus" aria-hidden="true">M</span><span><strong>Marcus</strong><small>A growing debt</small></span><span class="agent-arrow" aria-hidden="true">↗</span></button>
+<button class="agent-card" data-agent="leo" aria-pressed="false"><span class="avatar avatar-leo" aria-hidden="true">L</span><span><strong>Leo</strong><small>A repeat advance</small></span><span class="agent-arrow" aria-hidden="true">↗</span></button>
+</nav>
+<p class="sidebar-note">The same program.<br>Different evidence, different actions.</p>
+</aside>
+<article id="case-panel" class="case-panel" aria-labelledby="case-name" tabindex="-1"></article>
+</div>
+<footer class="site-footer"><p>Proposed pilot rules and sample figures. No live accounts or payments.</p><button class="text-button" data-action="rules">How the tiers work <span aria-hidden="true">↗</span></button></footer>
+</main>
+<p id="live-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+<dialog id="rules-dialog" class="modal" aria-labelledby="rules-title">
+<div class="modal-heading"><div><p class="eyebrow">THE PROPOSED RULES</p><h2 id="rules-title">Better quality, better terms.</h2></div><button class="icon-button" data-close="rules-dialog" aria-label="Close program rules">×</button></div>
+<div class="modal-body">
+<p class="modal-intro">Start at a nine-month advance. Compare the share of policies still paying at day 90 with similar agents.</p>
+<div class="table-scroll"><table class="rules-table"><caption class="sr-only">Proposed advance tiers</caption><thead><tr><th scope="col">90-day result against peer median</th><th scope="col">Advance</th></tr></thead><tbody>
+<tr class="reward-row"><td>Separately earned reward: sustained top quartile*</td><td>10 months</td></tr>
+<tr><td>No more than 3 percentage points below</td><td>9 months</td></tr>
+<tr><td>More than 3 through 8 points below</td><td>8 months</td></tr>
+<tr><td>More than 8 through 15 points below</td><td>6 months</td></tr>
+<tr><td>More than 15 points below</td><td>As premiums arrive</td></tr>
+</tbody></table></div>
+<p class="table-note">*Top-quartile 90-day and first-year results across two quarterly reviews, consistent repayments and no malicious conduct.</p>
+<div class="rule-summary"><p><strong>Before a downgrade</strong>At least 20 observed policies, a confidence check and verified Ethos failures excluded.</p><p><strong>To move back up</strong>Restore one level per quarter when recent policy records meet the next tier’s requirements.</p></div>
+<div class="checkout-guardrails"><strong>Two checks at application checkout</strong><p>Require a payday-aligned billing date and show an automated coverage-to-income affordability warning before a high-ratio application can be submitted.</p></div>
+<details class="disclosure"><summary>Credit limits and replacement policies</summary><p>New agents start with a $5,000 cap on outstanding unearned advances. After 20 policies have baseline 90-day results, they graduate to uncapped nine-month advances. Growing debt or early missed payments can freeze further funding. Sales above the new-agent cap earn commission as premiums arrive.</p><p>No fresh advance for the same customer’s replacement within 12 months. Legitimate coverage changes remain available; termination requires human review.</p></details>
+<details class="disclosure"><summary>Measurement and pilot assumptions</summary><p>Use rolling 90-day persistency: the share of policies with premiums paid at day 90. Include early failures, exclude verified Ethos billing failures and reverse associated chargebacks.</p><p>Compare against a fixed pilot platform median for the same product type. First-year results confirm the early picture and can block a reward or prompt further restriction. Small books can receive individual review; a few new sales cannot erase prior failures.</p><p>The nine-month baseline is assumed. Bands, caps, windows and sample minimums are pilot settings for Finance to validate. Marcus’s $4,200 balance and Dana’s cohort figures are illustrative.</p></details>
+</div>
+<div class="modal-footer"><button class="button button-primary" data-close="rules-dialog">Back to the walkthrough <span aria-hidden="true">→</span></button></div>
+</dialog>
+<dialog id="appeal-dialog" class="modal appeal-modal" aria-labelledby="appeal-title">
+<div class="modal-heading"><div><p class="eyebrow">WHEN SOMETHING LOOKS WRONG</p><h2 id="appeal-title">Ask for a review.</h2></div><button class="icon-button" data-close="appeal-dialog" aria-label="Close appeal">×</button></div>
+<div class="modal-body" id="appeal-content"></div>
+</dialog>
+<noscript><p class="noscript-note">Enable JavaScript to explore this browser-only prototype.</p></noscript>
+</body>
+</html>
